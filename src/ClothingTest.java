@@ -1,4 +1,4 @@
-public class ClothingTest {
+public class MainShop {
   public static void main(String[] args) {
   Clothing c1 = new Clothing("T-shirt", "M", 12.99, 12);
   Clothing c2 = new Clothing("Shirt", "M", 25.99, 10);
