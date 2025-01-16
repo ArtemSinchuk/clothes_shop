@@ -15,15 +15,14 @@ public class OwnerGUI extends JFrame {
     private JLabel lblProTip = new JLabel("Pro tip:");
     private JLabel lblProTip2 = new JLabel("Press the tab key to switch");
     private JLabel lblProTip3 = new JLabel("between text fields quickly");
-
     private JButton btnAddProduct = new JButton("Add");
     private JButton btnDeleteProduct = new JButton("Delete");
-
     private JTextField txtType = new JTextField();
     private JTextField txtSize = new JTextField();
     private JTextField txtCost = new JTextField();
     private JTextField txtAmount = new JTextField();
-
+    private Font descriptionFont = new Font("Arial", Font.BOLD, 18);
+    private Font saveFont = new Font("Arial", Font.BOLD, 20);
     private Shop shop;
 
     public OwnerGUI() {
@@ -63,12 +62,12 @@ public class OwnerGUI extends JFrame {
 
         lblDescription.setSize(250, 15);
         lblDescription.setLocation(300, 35);
-        lblDescription.setFont(new Font("Arial", Font.BOLD, 18));
+        lblDescription.setFont(descriptionFont);
 
         lblSavedProduct.setForeground(Color.green);
         lblSavedProduct.setSize(300, 20);
         lblSavedProduct.setLocation(200, 500);
-        lblSavedProduct.setFont(new Font("Arial", Font.BOLD, 20));
+        lblSavedProduct.setFont(saveFont);
         lblSavedProduct.setVisible(false);
 
         lblType.setBounds(100, 100, 80, 25);
