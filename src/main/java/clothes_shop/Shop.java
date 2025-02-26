@@ -15,14 +15,14 @@ public class Shop {
   public Shop() {
     this.clothes = new Clothing[100];
     this.totalCashDesk = 10;
-    this.freeCashDesk = random.nextInt(totalCashDesk) + 1;
+    this.freeCashDesk = getRandomCashDesk();
     this.nextIndex = 0;
   }
 
   public Shop(int capacity) {
       this.clothes = new Clothing[capacity];
       this.totalCashDesk = 10;
-      this.freeCashDesk = random.nextInt(11);
+      this.freeCashDesk = getRandomCashDesk();
       this.nextIndex = 0;
   }
 
@@ -44,6 +44,10 @@ public class Shop {
 
   public int getFreeCashDesk() {
       return freeCashDesk;
+  }
+
+  public int getRandomCashDesk() {
+    return random.nextInt(totalCashDesk) + 1;
   }
 
   public void setFreeCashDesk(int freeCashDesk) {
