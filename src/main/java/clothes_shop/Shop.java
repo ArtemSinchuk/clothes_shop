@@ -26,10 +26,16 @@ public class Shop {
       this.nextIndex = 0;
   }
 
-  public Clothing getClothes(int index) {
+  public Clothing getClothing(int index) {
+    if (index < 0){
+      throw new IndexOutOfBoundsException("Index is negative.");
+    }
+    if (index > getClothesLength()) {
+      throw new ShopCapacityExceedException("Index is out of bounds.");
+    }
       return clothes[index];
   }
-
+  
   public int clothesLength() {
     return clothes.length;
   }
