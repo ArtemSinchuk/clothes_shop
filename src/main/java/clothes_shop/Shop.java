@@ -59,9 +59,9 @@ public class Shop {
     return currentCapacityInArray;
   }
 
-  public void addClothing(Clothing clothes2) {
+  public void addClothing(Clothing clothing) {
     if (currentCapacityInArray < clothes.length) {
-        clothes[currentCapacityInArray] = clothes2;
+        clothes[currentCapacityInArray] = clothing;
         currentCapacityInArray++;
     } else {
       throw new ShopCapacityExceedException(
@@ -70,7 +70,7 @@ public class Shop {
     }
   }
 
-  public void addClothing(Clothing[] clothing) {
+  public void addClothes(Clothing[] clothing) {
     for (int i = 0; i < clothing.length; i++) {
       if (currentCapacityInArray < clothes.length) {
         clothes[currentCapacityInArray] = clothing[i];
@@ -81,5 +81,16 @@ public class Shop {
           );
         }
       }
+  }
+
+
+  public void getAllClothes() {
+    for (Clothing clothing : clothes) {
+      System.out.println(clothing);
+    }
+  }
+
+  public void removeClothing(int index) {
+
   }
 }
