@@ -5,20 +5,22 @@ public class MainShop {
       Shop shop = new Shop(10);
       ClothingAddingManager clothingManager = new ClothingAddingManager();
 
-      shop.addClothing(clothingManager.c1);
-      shop.addClothing(clothingManager.c2);
-      shop.addClothing(clothingManager.c3);
-      shop.addClothing(clothingManager.c4);
-      shop.addClothing(clothingManager.c5);
-      shop.addClothing(clothingManager.c6);
-      shop.addClothing(clothingManager.c7);
-      shop.addClothing(clothingManager.c8);
-      shop.addClothing(clothingManager.c9);
-      shop.addClothing(clothingManager.c10);
-      shop.addClothing(clothingManager.c11);
+      ClothingAddingManager.addClothes(shop, clothingManager.c1, 
+                                              clothingManager.c2,
+                                              clothingManager.c3,
+                                              clothingManager.c4,
+                                              clothingManager.c5,
+                                              clothingManager.c6,
+                                              clothingManager.c7,
+                                              clothingManager.c8,
+                                              clothingManager.c9,
+                                              clothingManager.c10,
+                                              clothingManager.c11); // TODO: fix
 
       for (int i = 0; i < shop.getClothesLength(); i++) {
-        System.out.println(shop.getClothes(i));
+        System.out.println(shop.getClothing(i));
       }
+
+
     }
 }

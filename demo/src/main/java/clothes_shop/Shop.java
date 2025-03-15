@@ -1,9 +1,8 @@
 package clothes_shop;
 
 import java.util.Random;
+import clothes_shop.exceptions.ShopCapacityExceedException;
 
-import clothes_shop.Exceptions.ShopCapacityExceedException;
-//ArrayList.add()
 public class Shop {
 
   private Clothing[] clothes;
@@ -12,22 +11,27 @@ public class Shop {
   private int currentCapacityInArray;
   private Random random = new Random();
 
-
   public Shop() {
     this.clothes = new Clothing[100];
     this.totalCashDesk = 10;
-    this.freeCashDesk = random.nextInt(totalCashDesk) + 1;
+    this.freeCashDesk = getFreeCashDesk();
     this.currentCapacityInArray = 0;
   }
 
   public Shop(int capacity) {
       this.clothes = new Clothing[capacity];
       this.totalCashDesk = 10;
-      this.freeCashDesk = random.nextInt(totalCashDesk) + 1;
+      this.freeCashDesk = getFreeCashDesk();
       this.currentCapacityInArray = 0;
   }
 
-  public Clothing getClothes(int index) {
+  public Clothing getClothing(int index) {
+    if (index < 0){
+      throw new IndexOutOfBoundsException("Index is negative.");
+    }
+    if (index > getClothesLength()) {
+      throw new ShopCapacityExceedException("Index is out of bounds.");
+    }
       return clothes[index];
   }
 
@@ -44,9 +48,9 @@ public class Shop {
   }
 
   public int getFreeCashDesk() {
-      return freeCashDesk;
+    return random.nextInt(totalCashDesk) + 1;
   }
-
+  
   public void setFreeCashDesk(int freeCashDesk) {
       this.freeCashDesk = freeCashDesk;
   }
@@ -65,5 +69,28 @@ public class Shop {
         );
     }
   }
-}
 
+  public void addClothes(Clothing[] clothing) {
+    for (int i = 0; i < clothing.length; i++) {
+      if (currentCapacityInArray < clothes.length) {
+        clothes[currentCapacityInArray] = clothing[i];
+        currentCapacityInArray++;
+      } else {
+        throw new ShopCapacityExceedException(
+          String.format("No space to add more clothing. %d/%d", currentCapacityInArray, clothes.length)
+          );
+        }
+      }
+  }
+
+
+  public void getAllClothes() {
+    for (Clothing clothing : clothes) {
+      System.out.println(clothing);
+    }
+  }
+
+  public void removeClothing(int index) { //TODO: finish
+
+  }
+}

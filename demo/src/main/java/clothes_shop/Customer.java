@@ -5,7 +5,6 @@ import javax.swing.*;
 public class Customer extends JFrame {
     int balance;
 
-
     public Customer() {
       this.balance = 0;
     }
@@ -20,6 +19,6 @@ public class Customer extends JFrame {
 
     @Override
     public String toString() {
-        return "balance" + balance;
+        return "balance: " + balance;
     }
 }

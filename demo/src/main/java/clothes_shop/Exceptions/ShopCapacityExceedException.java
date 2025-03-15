@@ -1,4 +1,4 @@
-package clothes_shop.Exceptions;
+package clothes_shop.exceptions;
 
 public class ShopCapacityExceedException extends RuntimeException {
   

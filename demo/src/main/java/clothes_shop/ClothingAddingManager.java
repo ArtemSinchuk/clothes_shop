@@ -1,7 +1,8 @@
 package clothes_shop;
 
+import clothes_shop.exceptions.ShopCapacityExceedException;
+
 public class ClothingAddingManager {
-  
   Clothing c1 = new Clothing("T-shirt", "M", 12.99, 12);
   Clothing c2 = new Clothing("Shirt", "M", 25.99, 10);
   Clothing c3 = new Clothing("Pants", "L", 49.99, 5);
@@ -14,7 +15,25 @@ public class ClothingAddingManager {
   Clothing c10 = new Clothing("Socks", "S", 9.99, 20);
   Clothing c11 = new Clothing("Socks", "S", 9.99, 21);
 
-  public void addClothing(Clothing clothing) {
+  public static void addClothing(Shop shop, Clothing clothing) {
     
+    try {
+      shop.addClothing(clothing);
+    } catch (ShopCapacityExceedException e) {
+      System.out.println("Cannot add more clothes: " + e.getMessage());
+    }
+  }
+
+  public static void addAllClothes(Shop shop, Clothing... clothes) {
+    if (shop == null || clothes == null) {
+      throw new IllegalArgumentException("Shop or clothes can not be null");
+    }
+    try {
+      for (Clothing clothing : clothes) {
+        shop.addClothing(clothing);
+      }
+    } catch (ShopCapacityExceedException e) {
+      System.out.println("Cannot add more clothes: " + e.getMessage());
+    }
   }
 }

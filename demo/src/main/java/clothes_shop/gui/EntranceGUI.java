@@ -1,17 +1,21 @@
-package clothes_shop;
+package clothes_shop.gui;
 
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import clothes_shop.Customer;
 
-import javax.swing.*;
-
-public class Entrance extends JFrame {
+public class EntranceGUI extends JFrame {
   private JPanel pnlPanel = new JPanel();
   private JLabel lblLabel = new JLabel("I am...");
-  private JButton btnOwner = new JButton("Owner");
-  private JButton btnCustomer = new JButton("Customer");
+  private JButton btnOwner = new JButton("Owner"), btnCustomer = new JButton("Customer");
 
-  public Entrance(){
+  public EntranceGUI(){
     addComponents();
     configureFrame();
     configureLabel();
@@ -30,9 +34,9 @@ public class Entrance extends JFrame {
     setSize(600, 400);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setResizable(false);
-    setVisible(true);
     setLocationRelativeTo(null);
     setLayout(null);
+    setVisible(true);
     
   }
 
@@ -70,7 +74,7 @@ public class Entrance extends JFrame {
     });
   }
   public static void main(String[] args) {
-    new Entrance();
+    new EntranceGUI();
   
 }
 }
