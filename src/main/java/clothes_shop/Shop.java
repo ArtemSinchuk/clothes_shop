@@ -83,6 +83,18 @@ public class Shop {
       }
   }
 
+  public void addAllClothes(Shop shop, Clothing... clothes) {
+    if (shop == null || clothes == null) {
+      throw new IllegalArgumentException("Shop or clothes can not be null");
+    }
+    try {
+      for (Clothing clothing : clothes) {
+        shop.addClothing(clothing);
+      }
+    } catch (ShopCapacityExceedException e) {
+      System.out.println("Cannot add more clothes: " + e.getMessage());
+    }
+  }
 
   public void getAllClothes() {
     for (Clothing clothing : clothes) {
@@ -90,7 +102,7 @@ public class Shop {
     }
   }
 
-  public void removeClothing(int index) {
+  public void removeClothing(int index) { //TODO: finish
 
   }
 }
