@@ -9,16 +9,14 @@ import clothes_shop.Customer;
 
 public class CustomerGUI extends JFrame {
   private Customer customer;
-  private JPanel pnlMainPanel;
   private JComboBox<String> comboType, comboSize,comboCost;
-  private JLabel lblBalance;
   private String[] types, sizes, costs;
 
     public CustomerGUI() {
       initialization();
       configureFrame();
       configureComboBox();
-      addComponents();
+      // addComponents();
     }
 
     private void initialization() {
@@ -29,8 +27,8 @@ public class CustomerGUI extends JFrame {
       comboType = new JComboBox<>(types);
       comboSize = new JComboBox<>(sizes);
       comboCost = new JComboBox<>(costs);
-      pnlMainPanel = new JPanel();
-      lblBalance = new JLabel(customer.toString());
+    //   pnlMainPanel = new JPanel();
+    //   lblBalance = new JLabel(customer.toString());
     }
 
     public void configureComboBox() {
@@ -39,13 +37,13 @@ public class CustomerGUI extends JFrame {
       comboCost.setLocation(150, 300);
     }
 
-    public void addComponents() {
-      add(pnlMainPanel);
-      pnlMainPanel.add(comboType);
-      pnlMainPanel.add(comboSize);
-      pnlMainPanel.add(comboCost);
-      pnlMainPanel.add(lblBalance);
-    }
+    // public void addComponents() {
+    //   add(pnlMainPanel);
+    //   pnlMainPanel.add(comboType);
+    //   pnlMainPanel.add(comboSize);
+    //   pnlMainPanel.add(comboCost);
+    //   pnlMainPanel.add(lblBalance);
+    // }
 
     public void configureFrame() {
       setTitle("Customer");

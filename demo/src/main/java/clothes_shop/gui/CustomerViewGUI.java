@@ -28,12 +28,12 @@ public class CustomerViewGUI extends JFrame {
 
     public void configureFrame() {
       setTitle("Customer");
-      setSize(500, 700);
+      setSize(700, 600);
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       setLocationRelativeTo(null);
       setVisible(true);
     }
     public static void main(String[] args) {
-      SwingUtilities.invokeLater(() -> new CustomerGUI());
+      SwingUtilities.invokeLater(() -> new CustomerViewGUI());
     }
 }

@@ -53,6 +53,10 @@ public class Clothing {
         this.amount = amount;
     }
 
+    public boolean isAvailable() {
+        return amount > 0;
+    }
+
     public void setData(String typeOfClothing, String size, double cost, int amount) {
     this.typeOfClothing = typeOfClothing;
     this.size = size;
