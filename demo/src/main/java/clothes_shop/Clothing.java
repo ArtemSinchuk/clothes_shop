@@ -53,6 +53,10 @@ public class Clothing {
         this.amount = amount;
     }
 
+    public void decrementAmount() {
+        amount--;
+    }
+
     public boolean isAvailable() {
         return amount > 0;
     }
